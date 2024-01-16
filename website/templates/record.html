@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+    <h5 class="card-header">
+        <strong>{{ customer_record.first_name }} {{ customer_record.last_name }}</strong>
+    </h5>
+    <div class="card-body">
+        <table class="table">
+            <tr>
+                <p class="card-text">
+                    <td><strong>Email: </strong></td>
+                    <td>{{ customer_record.email }}</td>
+                </p>
+            </tr>
+            <tr>
+                <p class="card-text">
+                    <td><strong>Phone: </strong></td>
+                    <td>{{ customer_record.phone }}</td>
+                </p>
+            </tr>
+            <tr>
+                <p class="card-text">
+                    <td><strong>Address: </strong></td>
+                    <td>{{ customer_record.address }}</td>
+                </p>
+            </tr>
+            <tr>
+                <p class="card-text">
+                    <td><strong>City: </strong></td>
+                    <td>{{ customer_record.city }}</td>
+                </p>
+            </tr>
+            <tr>
+                <p class="card-text">
+                    <td><strong>State: </strong></td>
+                    <td>{{ customer_record.state }}</td>
+                </p>
+            </tr>
+            <tr>
+                <p class="card-text">
+                    <td><strong>Zipcode: </strong></td>
+                    <td>{{ customer_record.zipcode }}</td>
+                </p>
+            </tr>
+            <tr>
+                <p class="card-text">
+                    <td><strong>Created at: </strong></td>
+                    <td>{{ customer_record.created_at }}</td>
+                </p>
+            </tr>
+            <tr>
+                <p class="card-text">
+                    <td><strong>ID: </strong></td>
+                    <td>{{ customer_record.id }}</td>
+                </p>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<br><br>
+<a href="{% url 'home' %}" class="btn btn-secondary">BACK</a>
+<a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">DELETE</a>
+<a href="{% url 'update_record' customer_record.id %}" class="btn btn-primary">UPDATE</a>
+
+{% endblock %}
